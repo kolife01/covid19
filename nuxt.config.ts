@@ -73,6 +73,14 @@ const config: NuxtConfig = {
    ** Global CSS
    */
   css: ['@/assets/global.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: { additionalData: `@import "@/assets/variables.scss";` },
+      },
+    },
+    publicDir: '@/static',
+  },
   /*
    ** Plugins to load before mounting the App
    */
@@ -107,6 +115,7 @@ const config: NuxtConfig = {
     '@nuxtjs/google-analytics',
     '@nuxtjs/gtm',
     'nuxt-purgecss',
+    'nuxt-vite',
   ],
   /*
    ** Nuxt.js modules
